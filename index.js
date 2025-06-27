@@ -6,7 +6,7 @@ const fetch = require('node-fetch').default; // So we can fetch() in Node.js
 const cors = require('cors'); // So frontend (browser) can access backend
 
 const app = express(); // Start express server
-const port = process.env.PORT || 3000;     // Use port 3000 for local testing
+const PORT = 3000;     // Use port 3000 for local testing
 
 app.use(cors());       // Allow requests from frontend
 app.use(express.json());// Parse JSON if frontend sends it
@@ -40,6 +40,6 @@ app.get('/api/players', async (req, res) => {
 });
 
 // Start server
-app.listen(port, () => {
+app.listen(PORT, () => {
   console.log(`✅️Server running on http://localhost:${PORT}`);
 });
