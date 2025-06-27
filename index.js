@@ -6,9 +6,13 @@ const fetch = require('node-fetch').default; // So we can fetch() in Node.js
 const cors = require('cors'); // So frontend (browser) can access backend
 
 const app = express(); // Start express server
-const PORT = 3000;     // Use port 3000 for local testing
+const PORT = 3000;     // Use port 3000 for local host
 
-app.use(cors());       // Allow requests from frontend
+app.use(cors({
+  origin: "https://ballora.vercel.app",
+  credentials: true // if using cookies
+}));
+// Allow requests from frontend
 app.use(express.json());// Parse JSON if frontend sends it
 
 // Route for frontend to call
