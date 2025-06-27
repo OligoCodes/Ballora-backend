@@ -29,7 +29,7 @@ app.get('/api/players', async (req, res) => {
     method: 'GET',
     headers: {
       'x-rapidapi-host': 'free-api-live-football-data.p.rapidapi.com',
-      'x-rapidapi-key': process.env.RAPID_API_KEY // secret API key
+      'x-rapidapi-key': process.env.API_KEY // secret API key
     }
   };
 
